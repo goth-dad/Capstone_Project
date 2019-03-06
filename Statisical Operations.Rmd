@@ -1,0 +1,92 @@
+---
+title: "Capstone Statistical Analysis"
+author: "Madison Mendez"
+date: "3/5/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(ggplot2)
+capstone.data
+```
+
+```{r}
+summary(capstone.data)
+```
+
+```{r}
+ggplot(capstone.data, aes(x = workclass, y = hours.per.week)) + 
+  geom_point(size = 1, shape = 20, position = "jitter")
+#There is a wide range of number of working hours per week for most of the sectors of work. The private and self-employed categories have the highest concentration of people who work more than 75 hours per week. I am surprised that there are some people in the "never-worked" category have a positive number of hours per week listed. Perhaps domestic work is included in this category, although it would make sense that domestic work is included in the "Without-pay" category.
+```
+
+```{r}
+ggplot(capstone.data, aes(x = age, y = education)) +
+  geom_point(size = 0.5, position = "jitter")
+#People in this dataset who are over 75 years of age tend to be less educated than the people 75 years of age or younger. There is a higher concentration of post-high school education for people less than 50 years than for those over 50 years old.  
+```
+
+```{r}
+ggplot(capstone.data, aes(x = age, y = income.category)) +
+  geom_point(position = "jitter")
+#People younger than 25 and older than 75 are more likely to be making less than $50k/year than the people from 25-75. Between 25 and 50 years of age, there are more people earning <=$50k/year than >$50k/year.
+```
+
+```{r}
+ggplot(capstone.data, aes(x = native.country, y = income.category)) +
+  geom_point(size = 1, shape = 15, position = "jitter")
+```
+
+```{r}
+qplot(capstone.data$age, geom = "histogram", binwidth = 5)
+#Most of the people in this dataset are in the 25-40 age range. 
+```
+
+```{r}
+ggplot(capstone.data, aes(x = sex, y = income.category)) +
+  geom_point(size = 1, shape = 23, position = "jitter")
+#A greater portion of women in this dataset are making <=$50k/year than men.
+```
+
+```{r}
+ggplot(capstone.data, aes(x = race, y = income.category)) +
+  geom_point(position = "jitter")
+#Across all racial categories, there is a greater portion of people with yearly salaries in the <=$50k range than in the >$50k range.
+```
+
+```{r}
+ggplot(capstone.data, aes(x = race, y = capital.gain)) +
+  geom_point(position = "jitter")
+```
+
+```{r}
+ggplot(capstone.data, aes(x = race, y = capital.loss)) +
+  geom_point(position = "jitter")
+```
+
+```{r}
+ggplot(capstone.data, aes(x = marital.status, y = income.category)) +
+  geom_point(position = "jitter")
+#Those without a spouse are in the <=$50k range more commonly than married people.
+```
+
+```{r}
+ggplot(capstone.data, aes(x = occupation, y = income.category)) +
+  geom_point(position = "jitter")
+```
+
+```{r}
+ggplot(capstone.data, aes(x = occupation, y = education)) +
+  geom_point(position = "jitter")
+```
+
+```{r}
+ggplot(capstone.data, aes(x = occupation, y = income.category)) +
+  geom_point(position = "jitter")
+#The "Exec-managerial" and "Prof-specialty" categories have the highest concentrations of doctorates and >$50k salaries. 
+```
+
