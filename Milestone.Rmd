@@ -1,0 +1,37 @@
+---
+title: "Untitled"
+author: "Madison Mendez"
+date: "3/5/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+#For my capstone project, I am studying a dataset from the UCI machine learning repository to determine which factors are most relevant in determining whether a person will make above $50k/year or less than $50k/year. This dataset was very clean. There were no missing values and the data points for the categorical data were recorded in a uniform way. Therefore, I did not have to do much data wrangling. I just had to clearly define the column names
+
+#These are the variables included in the dataset:
+#age: continuous
+#workclass: Private, Self-emp-not-inc, Self-emp-inc, Federal-gov, Local-gov, State-gov, Without-pay, Never-worked 
+#fnlwgt: continuous 
+#education: Bachelors, Some-college, 11th, HS-grad, Prof-school, Assoc-acdm, Assoc-voc, 9th, 7th-8th, 12th, Masters, 1st-4th, 10th, Doctorate, 5th-6th, Preschool
+#education-num: continuous. 
+#marital-status: Married-civ-spouse, Divorced, Never-married, Separated, Widowed, Married-spouse-absent, Married-AF-spouse 
+#occupation: Tech-support, Craft-repair, Other-service, Sales, Exec-managerial, Prof-specialty, Handlers-cleaners, Machine-op-inspct, Adm-clerical, Farming-fishing, Transport-moving, Priv-house-serv, Protective-serv, Armed-Forces
+#relationship: Wife, Own-child, Husband, Not-in-family, Other-relative, Unmarried 
+#race: White, Asian-Pac-Islander, Amer-Indian-Eskimo, Other, Black 
+#sex: Female, Male 
+#capital-gain: continuous 
+#capital-loss: continuous 
+#hours-per-week: continuous 
+#native-country: United-States, Cambodia, England, Puerto-Rico, Canada, Germany, Outlying-US(Guam-USVI-etc), India, Japan, Greece, South, China, Cuba, Iran, Honduras, Philippines, Italy, Poland, Jamaica, Vietnam, Mexico, Portugal, Ireland, France, Dominican-Republic, Laos, Ecuador, Taiwan, Haiti, Columbia, Hungary, Guatemala, Nicaragua, Scotland, Thailand, Yugoslavia, El-Salvador, Trinadad&Tobago, Peru, Hong, Holand-Netherlands
+
+#This dataset has several useful features that are useful to this analysis, but there are some shortcomings. There should be some countries from Africa included in this data set. There are also not enough racial categories. There should be a category for Latinx people. It would also be useful to include a mixed race category since many people do not belong to a single racial group. Further, there are only 2 gender categories recorded in this data set, so the experiences of people who do not belong in the "Female" or "Male" category (for example, intersex and non-binary people) are excluded.
+
+#In general, there are a lot more people in the <=$50k/year income range than the >$50k/year range. Some characteristics with higher percentages of income in the >$50k/year are being married and being in an executive/managerial role or a speciality professor. It is also more common to be in the >$50k/year range if a person is between the ages of 25 and 60. Additionally, men are more commonly in the higher income range than women. 
+
+#I think the best approach to this project is a learning decision tree because I think it would be most appropriate (of the tools included in this course) to determine which characteristics are the most important when predicting whether a person will earn <=$50k/year or >$50k/year.
+```
+
