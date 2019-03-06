@@ -1,0 +1,34 @@
+---
+title: "Capstone Project Data"
+author: "Madison Mendez"
+date: "2/15/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+capstone.data <- read_excel("Data1.xlsx")
+
+#There are no missing values. Also, the values stored in all of the columns are in a uniform format. Therefore, no data cleaning is necessary. However, I still need to label the columns.
+
+names(capstone.data)[1] <- "age"
+names(capstone.data)[2] <- "workclass"
+names(capstone.data)[3] <- "fnlwgt"
+names(capstone.data)[4] <- "education"
+names(capstone.data)[5] <- "education.num"
+names(capstone.data)[6] <- "marital.status"
+names(capstone.data)[7] <- "occupation"
+names(capstone.data)[8] <- "relationship"
+names(capstone.data)[9] <- "race"
+names(capstone.data)[10] <- "sex"
+names(capstone.data)[11] <- "capital.gain"
+names(capstone.data)[12] <- "capital.loss"
+names(capstone.data)[13] <- "hours.per.week"
+names(capstone.data)[14] <- "native.country"
+names(capstone.data)[15] <- "income.category"
+```
+
+
