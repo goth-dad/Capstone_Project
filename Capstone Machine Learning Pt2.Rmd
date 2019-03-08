@@ -1,0 +1,50 @@
+---
+title: "Capstone Machine Learning Pt2"
+author: "Madison Mendez"
+date: "3/7/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(caTools)
+library(rpart)
+library(rpart.plot)
+library(ROCR)
+str <- str(capstone.data)
+str    
+```
+
+```{r}
+set.seed(3000)
+split = sample.split(capstone.data$income.category, SplitRatio = 0.7)
+train = subset(capstone.data, split == TRUE)
+test = subset(capstone.data, split == FALSE)
+
+#CapstoneTree = rpart(income.category ~ age + workclass + education + education.num + marital.status + occupation + relationship + race + sex + capital.gain + capital.loss + hours.per.week + native.country)
+
+#Error in eval(predvars, data, env) : object 'income.category' not found
+
+#CapstoneTree = rpart(greater.than.50 ~ age + workclass + education + education.num + marital.status + occupation + relationship + race + sex + capital.gain + capital.loss + hours.per.week + native.country)
+
+#Error in eval(predvars, data, env) : object 'workclass' not found
+
+#CapstoneTree = rpart(capstone.data$income.category ~ capstone.data$age + capstone.data$workclass + capstone.data$education + capstone.data$education.num + capstone.data$marital.status + capstone.data$occupation + capstone.data$relationship + capstone.data$race + capstone.data$sex + capstone.data$capital.gain + capstone.data$capital.loss + capstone.data$hours.per.week + capstone.data$native.country)
+
+CapstoneTree = rpart(income.category ~ age + workclass + education + education.num + marital.status + occupation + relationship + race + sex + capital.gain + capital.loss + hours.per.week + native.country, data = capstone.data, method = "class", control = rpart.control(minbucket = 25))
+prp(CapstoneTree)
+```
+
+```{r}
+PredictCART = predict(CapstoneTree, newdata = test, type = "class")
+table(test$income.category, PredictCART)
+```
+
+```{r}
+(7069 + 1229) / (7069 + 347 + 1123 + 1229)
+#This model has an accuracy of ~85%
+```
+
