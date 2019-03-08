@@ -1,0 +1,8 @@
+#I forgot to upload this prior to uploading my machine learning R files.
+
+#I think of my project as a supervised classification problem. I do not need to predict a person’s income level because 
+#it is included in the dataset I chose. My goal is to create a model that accurately categorizes each person based on 
+#their characteristics. I am going to use all of the variables included in the dataset to determine which of them are most 
+#valuable in predicting a person’s income level. I am going to use a decision tree to approach this problem. A decision tree 
+#seems like the best method I know how to use because the results will be easily readable. My mentor also noted that decision 
+#trees are a powerful and commonly used tool in data science, so I would like to practice using them.  
