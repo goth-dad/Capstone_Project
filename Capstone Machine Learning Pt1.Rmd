@@ -1,0 +1,60 @@
+---
+title: "Capstone Tree"
+author: "Madison Mendez"
+date: "3/6/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(rpart)
+library(caret)
+library(klaR)
+capstone.data
+```
+
+```{r}
+#Create dummy variable for income category
+levels <- unique(capstone.data$income.category)
+levels <- sort(levels)
+for( i in 1:(length(levels)-1) ){
+  greater.than.50 <- paste("income.category",levels[i],sep="_")
+  capstone.data[,"income.category"] <- ifelse(capstone.data$income.category == levels[i], 1, 0)
+}
+capstone.data
+
+```
+
+```{r}
+train <- capstone.data[1:17000,]
+test <- capstone.data[17001:32560,]
+
+capstone.logit <- glm(income.category ~ age + workclass + fnlwgt + education + education.num + marital.status + occupation + relationship + race + sex + capital.gain + capital.loss + hours.per.week + native.country, data = capstone.data, family = "binomial")
+summary(capstone.logit)
+```
+
+```{r}
+anova(capstone.logit, test= "Chisq")
+```
+
+```{r}
+#fitted.results <- predict(capstone.logit, newdata = subset(test, select = c(2, 16)), type = 'response')
+
+#fitted.results <- ifelse(fitted.results > 0.5,1,0)
+
+#misClasificError <- mean(fitted.results != test$income.category)
+
+#print(paste('Accuracy', 1-misClasificError))
+#Error in eval(predvars, data, env) : object 'age' not found
+
+
+
+#train_control <- trainControl(method = "cv", number = 5)
+
+#model <- train(income.category ~ ., data = capstone.data, trControl= train_control, method = "nb")
+#print(model)
+```
+
