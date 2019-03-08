@@ -1,0 +1,17 @@
+#Detailing the Results of my Capstone Project
+
+# A person's income bracket is often of great importance to them. My project assessed several variables to predict whether a 
+#person is expected to earn above $50k/year or equal to or less than $50k/year.
+
+
+#My project can help you answer the following questions:
+#What income bracket am I expected to be in?
+#How can I change my income bracket?
+
+#Based on my analysis, the most important determinant of a person's income is based on their marital status. However, in the
+#interest of maintaining one's relationships (with others or themselves), the most important things a person can change about
+#their circumstances to give them a greater chance of earning above $50k/year is education and capital gain. People can give
+#themselves a greater chance of being in the greater than $50k/year range by having at least some college education. If college
+#is unattainable or not in the interest of a particular person, their best chance of getting themselves into the greater than 
+#50k/year range is to increase their capital gain. The minumum amount of capital gain increase recommended depends on one's 
+#marital status. 
